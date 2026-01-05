@@ -55,7 +55,7 @@ jobs:
           outputs: type=image,"name=${{ env.DOCKERHUB_REPO }}",push-by-digest=true,name-canonical=true,push=true
           push: true
           cache-from: type=registry,ref=${{ env.DOCKERHUB_REPO }}:buildcache-${{ env.PLATFORM_PAIR }}
-          cache-to: type=registry,ref=${{ env.DOCKERHUB_REPO }}:buildcache-${{ env.PLATFORM_PAIR }},mode=max
+          cache-to: type=registry,ref=${{ env.DOCKERHUB_REPO }}:latest,mode=max
 
       - name: Export digest
         run: |
